@@ -19,7 +19,7 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
     @Autowired
-    private CityRepository cityRepository
+    private CityRepository cityRepository;
     @GetMapping(value = "/data", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<WeatherResponse> getWeatherResponse(@RequestParam(value = "city",required = true) String city) throws CityRequiredException, CityNotFoundException {
         if(city==null || city.equalsIgnoreCase("")){
