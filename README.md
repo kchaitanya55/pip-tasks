@@ -26,3 +26,4 @@ The API is useful to fetch weather forecast of following 2 days of a selected ci
 ```
 
 2.If the user send the city which is not available .Error response will be sent to the user.
+3. Basic Authentication is required for Every request with credentials (admin/admin).
