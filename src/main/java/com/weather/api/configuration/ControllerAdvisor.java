@@ -32,10 +32,10 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler({Exception.class})
-    public ResponseEntity<Object> handleOtherException() {
+    public ResponseEntity<Object> handleOtherException(Exception ex) {
         ErrorResponse errorResponse=new ErrorResponse();
         errorResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        errorResponse.setMessage("Internal Server Error");
+        errorResponse.setMessage(ex.getMessage());
         errorResponse.setTimeStamp(System.currentTimeMillis());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
